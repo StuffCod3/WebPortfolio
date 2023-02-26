@@ -1,0 +1,8 @@
+ru\stuff\WebPortfolio\models\Social.class
+ru\stuff\WebPortfolio\controllers\Function\PanelController.class
+ru\stuff\WebPortfolio\services\SocialServices.class
+ru\stuff\WebPortfolio\controllers\Redirects\RedirectUrlController.class
+ru\stuff\WebPortfolio\repositories\SocialRepositories.class
+ru\stuff\WebPortfolio\config\SpringConfig.class
+ru\stuff\WebPortfolio\config\Dispatcher.class
+ru\stuff\WebPortfolio\controllers\Redirects\RedirectPageControllers.class

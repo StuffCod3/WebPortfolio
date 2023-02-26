@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/resources/styles/main.css">
+    <link rel="stylesheet" href="/resources/styles/slider.css">
+    <link rel="stylesheet" href="/resources/styles/media.css">
+    <link rel="stylesheet" href="/resources/styles/burger_header.css">
+    <link rel="stylesheet" href="/resources/styles/projects.css">
+
+    <link rel="icon" href="/resources/img/icon.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Slider -->
+    <script src="/resources/js/slider.js"></script>
+
+
+    <title>Stuff | Проекты</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header">
+                <img src="/resources/img/Logo.png" alt="">
+
+                <nav class="nav_menu">
+                    <input type="checkbox" class="toggle-menu">
+                    <div class="burger"></div>
+                    <ul class="menu">
+                        <li><a class="nav_item main" href="/">Главная</a></li>
+                        <li><a class="nav_item project" href="/projects">Проекты</a></li>
+                        <li><a class="nav_item contact" href="/contacts">Ссылки</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="web_content">
+                <h1>Web-приложения</h1>
+    
+                <div class="grid">
+
+                    <div th:each="project : ${projects}" class="grid_item_prj">
+                        <div class="card_prj">
+                            <img th:src="${project.image}" alt="">
+                        </div>
+                    </div>
+
+
+<!--                    <div class="grid_item_prj">-->
+<!--                        <div class="card_prj">-->
+<!--                            <img src="/resources/img/ideal_border.png" alt="">-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    
+<!--                    <div class="grid_item_prj">-->
+<!--                        <div class="card_prj">-->
+<!--                            <img src="/resources/img/dotnote_border.png" alt="">-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+            </div>
+
+            <div class="design_content">
+                <h1>Дизайн</h1>
+    
+                <div class="grid">
+                    <div class="grid_item_prj">
+                        <div class="card_prj">
+                            <img src="/resources/img/ideal_border.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="elements_footer">
+                <img src="/resources/img/Logo.png" alt="">
+                <div class="contact">
+                    <p>Связь со мной</p>
+                    <nav class="nav_footer">
+                        <ul>
+                            <li><a class="nav_item" href="/vk">VK</a></li>
+                            <li><a class="nav_item" href="/telegram">Telegram</a></li>
+                            <li><a class="nav_item" href="/kwork">Kwork</a></li>
+                            <li><a class="nav_item" href="#">eugenemll@vk.com</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
