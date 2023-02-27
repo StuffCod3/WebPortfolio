@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${social.name}"></title>
+</head>
+<body>
+    <p th:text="${social.name}"></p>
+    <p th:text="${social.quantity}"></p>
+
+    <div>
+        <a th:href="@{/panel/social/{id}/edit(id=${social.id})}">Редактировать</a>
+    </div>
+
+</body>
+</html>

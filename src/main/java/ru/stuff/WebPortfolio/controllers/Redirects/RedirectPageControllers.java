@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.stuff.WebPortfolio.models.Social;
 import ru.stuff.WebPortfolio.services.SocialServices;
@@ -23,9 +24,15 @@ public class RedirectPageControllers {
     }
 
     @GetMapping("/contacts")
-    public String redirectContactsPage(){
+    public String redirectContactsPage(Model model){
+        model.addAttribute("socials", socialServices.showAllSocial());
         return "contact/contact";
     }
+
+//    @GetMapping("/contacts")
+//    public String redirectContactsPage(){
+//        return "contact/contact";
+//    }
 
     @GetMapping("/projects")
     public String redirectProjectsPage(){
@@ -48,6 +55,19 @@ public class RedirectPageControllers {
     public String redirectPanelSocialAddPage(Model model){
         model.addAttribute("socials", new Social());
         return "panel/social_add";
+    }
+
+    //Открыть страницу соцсети
+    @GetMapping("/panel/social/{id}")
+    public String redirectCheckSocialPage(@PathVariable("id") int id, Model model){
+        model.addAttribute("social", socialServices.showSocialById(id));
+        return "panel/social_check";
+    }
+
+    @GetMapping("/panel/social/{id}/edit")
+    public String redirectEditSocialPage(@PathVariable("id") int id, Model model){
+        model.addAttribute("social", socialServices.showSocialById(id));
+        return "panel/social_edit";
     }
 
     @GetMapping("/panel/project")

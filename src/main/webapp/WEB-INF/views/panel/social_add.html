@@ -16,6 +16,12 @@
         <label for="quantity">Число подписчиков</label>
         <input type="text" th:field="*{quantity}" id="quantity">
         <div th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></div>
+        <label for="image">Путь к картинке</label>
+        <input type="text" th:field="*{image}" id="image">
+        <div th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></div>
+        <label for="url">Ссылка</label>
+        <input type="text" th:field="*{url}" id="url">
+        <div th:if="${#fields.hasErrors('url')}" th:errors="*{url}"></div>
         <br>
         <input type="submit" value="Создать">
     </form>

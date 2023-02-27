@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.stuff.WebPortfolio.models.Social;
 import ru.stuff.WebPortfolio.services.SocialServices;
@@ -21,5 +23,10 @@ public class PanelController {
             socialServices.saveSocial(socials);
             return "redirect:/projects";
         }
+    }
+    @PostMapping("/panel/social/{id}")
+    public String updateSocial(Social social){
+        socialServices.saveSocial(social);
+        return "redirect:/panel/social";
     }
 }

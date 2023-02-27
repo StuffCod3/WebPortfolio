@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,34 +46,16 @@
         <div class="container">
             <div class="contacts">
                 <h1>Медиа сети</h1>
-    
                 <div class="grid">
-                    <div class="grid_item_contact">
-                        <div class="card_contact" onclick="location.href='/boosty'">
-                            <img src="/resources/img/boosty.png" alt="">
-                            <p class="title_contact">Boosty</p>
-                            <p class="description_contact">3 подписчика</p>
-
+                    <a th:each="social : ${socials}" th:href="${social.url}" style="text-decoration: none;">
+                        <div class="grid_item_contact">
+                            <div class="card_contact">
+                                <img th:src="${social.image}" alt="">
+                                <p th:text="${social.name}" class="title_contact"></p>
+                                <p th:text="${social.quantity}" class="description_contact"></p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="grid_item_contact">
-                        <div class="card_contact" onclick="location.href='/telegram'">
-                            <img src="/resources/img/telegram.png" alt="">
-                            <p class="title_contact">Telegram</p>
-                            <p class="description_contact">16 подписчиков</p>
-                        
-                        </div>
-                    </div>
-    
-                    <div class="grid_item_contact">
-                        <div class="card_contact" onclick="location.href='/twitch'">
-                            <img src="/resources/img/twitch.png" alt="">
-                            <p class="title_contact">Twitch</p>
-                            <p class="description_contact">103 фоловера</p>
-                        
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 

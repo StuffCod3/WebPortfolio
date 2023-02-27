@@ -27,6 +27,7 @@ public class SocialServices {
         socialRepositories.save(social);
     }
 
+
 //    Social social1 = new Social(1, "j", 2);
 //    Social social2 = new Social(2, "gfd", 56);
 //    Social social3 = new Social(3, "hdfh", 142);
@@ -44,5 +45,9 @@ public class SocialServices {
 //    public void saveSocial(Social social){
 //        list.add(social);
 //    }
-
+//
+//    public Social showSocialById(int id){
+//
+//        return list.get(id-1);
+//    }
 }

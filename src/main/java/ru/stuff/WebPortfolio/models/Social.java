@@ -21,5 +21,9 @@ public class Social {
 
 //    @NotEmpty(message = "Укажите колличество подписчиков")
     @Column(name = "quantity")
-    private int quantity;
+    private String quantity;
+    @Column(name = "image")
+    private String image;
+    @Column(name = "url")
+    private String url;
 }
